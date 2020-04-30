@@ -11,22 +11,23 @@ import { map } from 'rxjs/operators';
 })
 export class MovieService {
 
-  constructor(protected http: HttpClient, private apiService:ApiService) { }
+  constructor(protected http: HttpClient, private apiService: ApiService) { }
 
-  getHighestGrossingMovies(path: string):Observable<Movie[]>{
+  getHighestGrossingMovies(path: string): Observable<Movie[]> {
     return this.http.get(`${environment.apiUrl}${path}`).pipe(
-      map(resp=>resp as any[])
+      map(resp => resp as any[])
     );
   }
-
+  /*
   getMovieById(id:number): Observable<Movie>{
     return this.apiService.getOne('movies/'+id);
   }
-
-  getMoviesByGenreId(genreId:number): Observable<Movie[]>{
-    return this.http.get(`${environment.apiUrl}movies/genre/${genreId}`).pipe(
-      map(resp=>resp as any[])
-    );
+  */
+  getMovieById(id: number): Observable<Movie> {
+    return this.apiService.getOne('movies/', id);
   }
- 
+  getMoviesByGenreId(genreId: number): Observable<Movie[]> {
+    return this.apiService.getAll(`${'movies/genre/'}${genreId}`);
+  }
+
 }

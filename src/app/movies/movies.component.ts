@@ -13,7 +13,7 @@ export class MoviesComponent implements OnInit {
   id:number;
   movies:Movie[];
   movie:Movie;
-  constructor(private movieService:MovieService,private route:ActivatedRoute) { }
+  constructor(private movieService:MovieService,private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.movieService.getHighestGrossingMovies('movies/top').subscribe(
@@ -27,7 +27,12 @@ export class MoviesComponent implements OnInit {
     //   this.movieService.getMovieById(this.id).subscribe(
     //     m=>this.movie = m
     //   );
-    this.movieService.getMovieById(1).subscribe(
+    this.activeRoute.paramMap.subscribe(
+      params => {
+          this.id = +params.get('id');
+      }
+    );
+    this.movieService.getMovieById(this.id).subscribe(
       m=>{
         this.movie = m;
         console.log(this.movie);

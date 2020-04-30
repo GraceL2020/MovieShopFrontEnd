@@ -11,6 +11,9 @@ import { CreateMovieComponent } from './admin/create-movie/create-movie.componen
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieCardListComponent } from './movies/movie-card-list/movie-card-list.component';
+import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
+import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
+import { CastCardListComponent } from './casts/cast-card-list/cast-card-list.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { MovieCardListComponent } from './movies/movie-card-list/movie-card-list
     HeaderComponent,
     CreateMovieComponent,
     HomeComponent,
-    MovieCardListComponent
+    MovieCardListComponent,
+    MovieCardComponent,
+    MovieDetailsComponent,
+    CastCardListComponent
   ],
   imports: [
     BrowserModule,
