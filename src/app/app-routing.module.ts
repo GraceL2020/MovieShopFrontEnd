@@ -6,6 +6,8 @@ import { GenresComponent } from './genres/genres.component';
 import { MovieCardListComponent } from './movies/movie-card-list/movie-card-list.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { CastCardListComponent } from './casts/cast-card-list/cast-card-list.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 const routes: Routes = [
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'movies/genre/:id', component: MovieCardListComponent },
   { path: 'casts/movie/:id', component: CastCardListComponent },
   { path: 'admin/createmovie', component: CreateMovieComponent },
-  { path: 'movies/:id', component: MovieDetailsComponent }
+  { path: 'movies/:id', component: MovieDetailsComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({

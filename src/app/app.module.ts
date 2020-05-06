@@ -14,7 +14,9 @@ import { MovieCardListComponent } from './movies/movie-card-list/movie-card-list
 import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { CastCardListComponent } from './casts/cast-card-list/cast-card-list.component';
-
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { FormsModule, ReactiveFormsModule} from "@angular/forms"
 
 @NgModule({
   declarations: [
@@ -27,12 +29,16 @@ import { CastCardListComponent } from './casts/cast-card-list/cast-card-list.com
     MovieCardListComponent,
     MovieCardComponent,
     MovieDetailsComponent,
-    CastCardListComponent
+    CastCardListComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule, 
+    ReactiveFormsModule,
     NgbModule
   ],
   providers: [],

@@ -31,5 +31,10 @@ export class ApiService {
     )
   }
 
+  create(path: string, resource: Object = {}, options?): Observable<any> {
+    return this.http.post(`${environment.apiUrl}${path}`, resource, options)
+      .pipe(map(response => response));//, catchError(e => throwError(new Error('SOMETHING BAD HAPPENED')))
+  }
+
 
 }

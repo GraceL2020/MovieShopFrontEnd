@@ -5,30 +5,37 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <div ngbDropdown>
-                    <a class="nav-link dropdown-toggle" ngbDropdownToggle>
+        <ul ngbNav #nav="ngbNav" class="nav-tabs">
+            <li ngbNavItem>
+                <div ngbDropdown ngbNavItem>
+                    <a class="btn btn-light nav-link dropdown-toggle  m-2 h-75" ngbDropdownToggle>
                         Genres
                     </a>
 
                     <div ngbDropdownMenu>
                         <app-genres></app-genres>
                     </div>
-                </div>
-                
-                
+                </div> 
             </li>
-            <li class="nav-item">
-                <a class="btn btn-outline-primary"> Register</a>
+
+            <li ngbNavItem *ngIf="!isLogged"><!--*ngIf="!isLogged">-->
+                <a class="btn btn-light m-2 h-75"> Register</a>
             </li>
-            <li class="nav-item">
-                <a class="btn btn-outline-primary"> Login</a>
+            <li ngbNavItem *ngIf="!isLogged">
+                <a class="btn btn-light m-2 h-75"> Login</a>
             </li>
+
+            <li ngbNavItem *ngIf="isLogged">
+                <a class="btn btn-light m-2 h-75"> {{fullName}}</a>
+            </li>
+            
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Movies</button>
-        </form>
+        <div class="col align-items-end">
+            <form class="form-inline my-2 my-lg-0 float-right">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Movies</button>
+            </form>
+        </div>
+        
     </div>
 </nav>
