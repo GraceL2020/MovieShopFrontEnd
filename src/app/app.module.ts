@@ -16,7 +16,10 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
 import { CastCardListComponent } from './casts/cast-card-list/cast-card-list.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { FormsModule, ReactiveFormsModule} from "@angular/forms"
+import { FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { PurchasesComponent } from './account/purchases/purchases.component';
+import { FavoritesComponent } from './account/favorites/favorites.component';
+import { ProfileComponent } from './account/profile/profile.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms"
     MovieDetailsComponent,
     CastCardListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PurchasesComponent,
+    FavoritesComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

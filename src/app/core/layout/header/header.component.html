@@ -18,15 +18,18 @@
                 </div> 
             </li>
 
-            <li ngbNavItem *ngIf="!isLogged"><!--*ngIf="!isLogged">-->
+            <li ngbNavItem *ngIf="!authService.isLoggedIn()"><!--*ngIf="!isLogged">-->
                 <a class="btn btn-light m-2 h-75"> Register</a>
             </li>
-            <li ngbNavItem *ngIf="!isLogged">
-                <a class="btn btn-light m-2 h-75"> Login</a>
+            <li ngbNavItem *ngIf="!authService.isLoggedIn()">
+                <a class="btn btn-light m-2 h-75" (click)="login()"> Login</a>
             </li>
 
-            <li ngbNavItem *ngIf="isLogged">
+            <li ngbNavItem *ngIf="authService.isLoggedIn()">
                 <a class="btn btn-light m-2 h-75"> {{fullName}}</a>
+            </li>
+            <li ngbNavItem *ngIf="authService.isLoggedIn()">
+                <a class="btn btn-light m-2 h-75" (click)="logout()"> logout</a>
             </li>
             
         </ul>

@@ -30,7 +30,7 @@
           {{movie?.runTime}} m | {{movie?.releaseDate | date:'yyyy'}}
         </div>
         <div class="col-8">
-          <ng-container *ngFor="let g of genres"><!--movie?.genres-->
+          <ng-container *ngFor="let g of movie?.genres"><!--movie?.genres-->
             <a href="#"
                *ngIf="g"
                [routerLink]="['/movies/genres/', g?.id ]"
@@ -142,7 +142,7 @@
       <table class="table">
 
         <tbody>
-          <tr *ngFor="let cast of casts"> <!--movie?.casts-->
+          <tr *ngFor="let cast of movie?.casts"> <!--movie?.casts-->
             <td> <img src="{{ cast?.profilePath }}"
                    class="cast-small-img rounded-circle"
                    alt="{{ cast?.name }}" /> </td>

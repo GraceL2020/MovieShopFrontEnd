@@ -17,8 +17,6 @@ export class MovieDetailsComponent implements OnInit {
   constructor(private movieService: MovieService, private castService: CastService, private genreService: GenreService, private activeRoute: ActivatedRoute) { }
   movieId: number;
   movie: Movie;
-  casts: Cast[];
-  genres: Genre[];
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(
       params => {
@@ -29,14 +27,6 @@ export class MovieDetailsComponent implements OnInit {
       m => {
         this.movie = m;
         console.log(this.movie);
-      }
-    );
-    this.genreService.getGenresByMovieId(this.movieId).subscribe(
-      g => this.genres = g
-    );
-    this.castService.getCastsForMovie(this.movieId).subscribe(
-      c => {
-        this.casts = c;
       }
     );
   }

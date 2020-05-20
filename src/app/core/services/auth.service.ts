@@ -57,9 +57,21 @@ export class AuthService {
     return true;
   }
 
+  isAdmin():boolean{
+    //check tokens whether it has admin role
+    this.decodeToken();
+    if(this.user.role.indexOf('admin')>-1){
+      return true;
+    }
+      
+    return false;
+  }
+
   //get first and last name
   getUserFullName():string{
+    
     this.decodeToken();
+    //console.log(this.user.role);
     if (this.user != null)
       return this.user.given_name+" "+this.user.family_name;
     return "";
